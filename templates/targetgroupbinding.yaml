@@ -1,0 +1,14 @@
+{{- if .Values.targetGroupBinding.create -}}
+apiVersion: elbv2.k8s.aws/v1alpha1
+kind: TargetGroupBinding
+metadata:
+  name: {{ include "citizenportalweb.fullname" . }}
+  namespace: {{ include "citizenportalweb.namespace" . }}
+  labels:
+    {{- include "citizenportalweb.labels" . | nindent 4 }}
+spec:
+    serviceRef:
+        name: {{ include "citizenportalweb.fullname" . }}
+        port: {{ .Values.service.port }}
+    targetGroupARN: {{ .Values.targetGroupBinding.targetGroupARN }}
+{{- end}}

@@ -1,0 +1,73 @@
+# Default values for ae-citizenportalweb.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+
+image:
+  application:
+    repository: 750920731536.dkr.ecr.us-east-1.amazonaws.com/ae-citizenportalweb
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "1.25.21"
+    imagePullSecrets: []
+
+application:
+  resources:  
+    limits:
+      cpu: 1
+      memory: 2Gi
+    requests:
+      cpu: 250m
+      memory: 512Mi
+  volume_secret:
+    present: true
+    name: ae-citizenportalweb-secrets
+    mountPath: /etc/secrets
+
+configmap:
+  enabled: true
+  name: ""
+
+secretdtls:
+  enabled: true
+  name: ""
+
+nameOverride: ""
+fullnameOverride: ""
+
+namespace: "ae-citizenportalweb"
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ae-svc-accnt
+
+ingress:
+  enabled: false
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: NodePort
+  port: 80
+  tls: []
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 85
+
+targetGroupBinding:
+    create: false
+    targetGroupARN: arn:aws:elasticloadbalancing:us-east-1:750920731536:targetgroup/aptg-ue1-master-primary/1c65778a3bf666d9
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
