@@ -7,5 +7,5 @@ metadata:
     {{- include "citizenportalweb.labels" . | nindent 4 }}
 data:
 {{- range $key, $value := .Values.config -}}
-{{ printf "%s: %s" ($key | toString) ($value | toString ) | nindent 2 }}
+{{ printf "%s: %s" ($key | toString) ($value | toString | quote) | nindent 2 }}
 {{- end -}}

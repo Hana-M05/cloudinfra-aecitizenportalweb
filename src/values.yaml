@@ -9,7 +9,7 @@ image:
     repository: 750920731536.dkr.ecr.us-east-1.amazonaws.com/ae-citizenportalweb
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.25.21"
+    tag: "1.16.329"
     imagePullSecrets: []
 
 application:
@@ -36,12 +36,12 @@ secretdtls:
 nameOverride: ""
 fullnameOverride: ""
 
-namespace: "ae-citizenportalweb"
+namespace: "citizenportal"
 
 serviceAccount:
   create: true
   annotations: {}
-  name: ae-svc-accnt
+  name: cp-svc-accnt
 
 ingress:
   enabled: false
