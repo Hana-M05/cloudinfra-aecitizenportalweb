@@ -7,9 +7,11 @@ replicaCount: 2
 image:
   application:
     repository: 750920731536.dkr.ecr.us-east-1.amazonaws.com/ae-citizenportalweb
+    #repository: nginx
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.16.329"
+    tag: "1.2.313"
+    #tag: latest
     imagePullSecrets: []
 
 application:
