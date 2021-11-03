@@ -97,7 +97,7 @@ spec:
                 fieldRef:
                   fieldPath: spec.nodeName
             - name: DD_CLUSTER_NAME
-              value: "eks-ue1-master-primary"
+              value: "eks-ue1-dev"
             - name: DD_CHECKS_TAG_CARDINALITY
               value: "high"
             - name: DD_DOGSTATSD_TAG_CARDINALITY
@@ -113,8 +113,8 @@ spec:
             - name: DD_CLUSTER_AGENT_ENABLED
               value: "true"
             - name: DD_CLUSTER_AGENT_AUTH_TOKEN
-              value: "HcAIZP9ZZSu4BjUV88w8o86M74x0l7Ou"
-            - name: DATADOGhelm chart save . test-chart:v1_CLUSTER_AGENT
+              value: "8UYA52zPXZGNOZ4UXJtn56zl2gEMypw2"
+            - name: DATADOG_CLUSTER_AGENT
               value: "datadog-agent-cluster-agent"
             - name: DATADOG_CLUSTER_AGENT_SERVICE_HOST
               value: "datadog-agent-cluster-agent.default"
@@ -134,7 +134,7 @@ spec:
               cpu: "800m"
             limits:
               memory: "512Mi"
-              cpu: "800m" 
+              cpu: "800m"  
       {{- if .Values.application.volume_secret.present }}
       volumes:
         - name: {{ .Values.application.volume_secret.name }}
