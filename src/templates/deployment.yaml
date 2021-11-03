@@ -49,6 +49,92 @@ spec:
             - name: {{ .Values.application.volume_secret.name }}
               mountPath: {{ .Values.application.volume_secret.mountPath }}
           {{- end }}
+         ## Running the Agent as a sidecar
+        - image: datadog/agent
+          name: datadog-agent
+          env:
+            - name: DD_COLLECT_KUBERNETES_EVENTS
+              value: "true"
+            - name: DD_APM_ENABLED
+              value: "true"
+            - name: MY_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: MY_POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            #- DD_TAGS = "env:dev service:. version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
+            #- DD_DOGSTATSD_TAGS = "env:dev service:nginx-demo-fargate version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
+            - name: DD_TAGS
+              value: "env:dev service:nginx-fargate-demo version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
+            - name: DD_DOGSTATSD_TAGS
+              value: "env:dev service:nginx-fargate-demo version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
+            - name: DD_API_KEY
+              value: "9409be97f18a5e00a905ced0bf5a1b59"
+            - name: DD_SITE
+              value: "datadoghq.com"
+            - name: DD_EKS_FARGATE
+              value: "true"
+            - name: DD_KUBELET_TLS_VERIFY
+              value: "false"
+            - name: DD_KUBERNETES_KUBELET_NODENAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            - name: DD_HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: DD_CLUSTER_NAME
+              value: "eks-ue1-master-primary"
+            - name: DD_CHECKS_TAG_CARDINALITY
+              value: "high"
+            - name: DD_DOGSTATSD_TAG_CARDINALITY
+              value: "high"
+            - name: DD_DOGSTATSD_PORT
+              value: "8125"
+            - name: DD_DOGSTATSD_NON_LOCAL_TRAFFIC
+              value: "true"
+            - name: DD_HEALTH_PORT
+              value: "5555"
+            - name: DD_DOGSTATSD_SOCKET
+              value: "/var/run/datadog/dsd.socket"
+            - name: DD_CLUSTER_AGENT_ENABLED
+              value: "true"
+            - name: DD_CLUSTER_AGENT_AUTH_TOKEN
+              value: "HcAIZP9ZZSu4BjUV88w8o86M74x0l7Ou"
+            - name: DATADOGhelm chart save . test-chart:v1_CLUSTER_AGENT
+              value: "datadog-agent-cluster-agent"
+            - name: DATADOG_CLUSTER_AGENT_SERVICE_HOST
+              value: "datadog-agent-cluster-agent.default"
+            - name: DATADOG_CLUSTER_AGENT_SERVICE_PORT
+              value: "5005"
+            - name: DD_PROCESS_AGENT_ENABLED
+              value: "true"
+            - name: DD_LEADER_ELECTION
+              value: "true"
+            - name: DD_DOGSTATSD_ORIGIN_DETECTION
+              value: "true"
+            - name: DD_DISABLE_CLUSTER_NAME_TAG_KEY
+              value: "true"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "800m"
+            limits:
+              memory: "512Mi"
+              cpu: "800m" 
       {{- if .Values.application.volume_secret.present }}
       volumes:
         - name: {{ .Values.application.volume_secret.name }}
