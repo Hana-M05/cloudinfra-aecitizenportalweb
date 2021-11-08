@@ -66,8 +66,8 @@ autoscaling:
   targetCPUUtilizationPercentage: 85
 
 targetGroupBinding:
-    create: false
-    targetGroupARN: arn:aws:elasticloadbalancing:us-east-1:750920731536:targetgroup/aptg-ue1-master-primary/1c65778a3bf666d9
+    create: true
+    arn:
 nodeSelector: {}
 
 tolerations: []

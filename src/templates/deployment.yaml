@@ -76,11 +76,14 @@ spec:
             #- DD_TAGS = "env:dev service:. version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
             #- DD_DOGSTATSD_TAGS = "env:dev service:nginx-demo-fargate version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
             - name: DD_TAGS
-              value: "env:dev service:nginx-fargate-demo version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
+              value: "env:master service:dp-citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:dp-citizenportalweb"
             - name: DD_DOGSTATSD_TAGS
-              value: "env:dev service:nginx-fargate-demo version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
+              value: "env:master service:dp-citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:dp-citizenportalweb"
             - name: DD_API_KEY
-              value: "9409be97f18a5e00a905ced0bf5a1b59"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "citizenportalweb.secrets" . }}
+                  key: Datadog_ApiKey
             - name: DD_SITE
               value: "datadoghq.com"
             - name: DD_EKS_FARGATE
@@ -113,11 +116,14 @@ spec:
             - name: DD_CLUSTER_AGENT_ENABLED
               value: "true"
             - name: DD_CLUSTER_AGENT_AUTH_TOKEN
-              value: "8UYA52zPXZGNOZ4UXJtn56zl2gEMypw2"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "citizenportalweb.secrets" . }}
+                  key: Datadog_Cluster_Agent_Token
             - name: DATADOG_CLUSTER_AGENT
-              value: "datadog-agent-cluster-agent"
+              value: "dd-datadog-cluster-agent"
             - name: DATADOG_CLUSTER_AGENT_SERVICE_HOST
-              value: "datadog-agent-cluster-agent.default"
+              value: "dd-datadog-cluster-agent.default"
             - name: DATADOG_CLUSTER_AGENT_SERVICE_PORT
               value: "5005"
             - name: DD_PROCESS_AGENT_ENABLED
