@@ -38,12 +38,12 @@ secretdtls:
 nameOverride: ""
 fullnameOverride: ""
 
-namespace: "citizenportal"
+namespace: 
 
 serviceAccount:
   create: true
   annotations: {}
-  name: cp-svc-accnt
+  name: ae-citizenportalweb
 
 ingress:
   enabled: false

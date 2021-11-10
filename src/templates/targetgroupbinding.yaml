@@ -1,5 +1,5 @@
 {{- if .Values.targetGroupBinding.create -}}
-apiVersion: elbv2.k8s.aws/v1alpha1
+apiVersion: elbv2.k8s.aws/v1beta1
 kind: TargetGroupBinding
 metadata:
   name: {{ include "citizenportalweb.fullname" . }}
@@ -10,5 +10,6 @@ spec:
     serviceRef:
         name: {{ include "citizenportalweb.fullname" . }}
         port: {{ .Values.service.port }}
-    targetGroupARN: {{ .Values.targetGroupBinding.targetGroupARN }}
+    targetGroupARN: {{ .Values.targetGroupBinding.arn }}
+    targetType: ip
 {{- end}}

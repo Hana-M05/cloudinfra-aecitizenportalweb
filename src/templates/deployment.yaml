@@ -73,12 +73,10 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
-            #- DD_TAGS = "env:dev service:. version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
-            #- DD_DOGSTATSD_TAGS = "env:dev service:nginx-demo-fargate version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:nginx-demo-fargate"
             - name: DD_TAGS
-              value: "env:master service:dp-citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:dp-citizenportalweb"
+              value: "env:master service:ae-citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:ae-citizenportalweb"
             - name: DD_DOGSTATSD_TAGS
-              value: "env:master service:dp-citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:dp-citizenportalweb"
+              value: "env:master service:ae-citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:ae-citizenportalweb"
             - name: DD_API_KEY
               valueFrom:
                 secretKeyRef:
@@ -100,7 +98,10 @@ spec:
                 fieldRef:
                   fieldPath: spec.nodeName
             - name: DD_CLUSTER_NAME
-              value: "eks-ue1-dev"
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "citizenportalweb.configmap" . }}
+                  key: Datadog_ClusterName            
             - name: DD_CHECKS_TAG_CARDINALITY
               value: "high"
             - name: DD_DOGSTATSD_TAG_CARDINALITY
@@ -123,7 +124,7 @@ spec:
             - name: DATADOG_CLUSTER_AGENT
               value: "dd-datadog-cluster-agent"
             - name: DATADOG_CLUSTER_AGENT_SERVICE_HOST
-              value: "dd-datadog-cluster-agent.default"
+              value: "dd-datadog-cluster-agent.kube-system"
             - name: DATADOG_CLUSTER_AGENT_SERVICE_PORT
               value: "5005"
             - name: DD_PROCESS_AGENT_ENABLED
@@ -134,6 +135,8 @@ spec:
               value: "true"
             - name: DD_DISABLE_CLUSTER_NAME_TAG_KEY
               value: "true"
+            - name: DD_ORCHESTRATOR_EXPLORER_ENABLED
+              value: "true"              
           resources:
             requests:
               memory: "512Mi"
