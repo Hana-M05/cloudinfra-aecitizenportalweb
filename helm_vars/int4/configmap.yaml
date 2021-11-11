@@ -8,8 +8,9 @@ config:
   NGINX_VERSION: 1.13.12
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   CitizenPortalWeb_EnvironmentCode: I4
-  CitizenPortalWeb_Urls: http://citizenportal-integration4.dudesoln.com
+  CitizenPortalWeb_Urls: http://citizenportal-integration4aws.dudesoln.com
   CitizenPortalWeb_SecretsPath: /etc/secrets
   PWD: /
   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
   NEW_RELIC_APP_NAME: AE.I4.CitizenPortalWeb
+  Datadog_ClusterName: eks-ue1-dev
