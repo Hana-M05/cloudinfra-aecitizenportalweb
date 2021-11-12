@@ -92,3 +92,18 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Expand the name of the chart.
+*/}}
+{{- define "citizenportalweb.clusterrole" -}}
+{{- printf "%s-%s" .Release.Name .Release.Namespace | trunc 63 | trimSuffix "-" }}
+{{- end }}
+
+
+{{/*
+Expand the name of the chart.
+*/}}
+{{- define "citizenportalweb.clusterrolebinding" -}}
+{{- printf "%s-%s" .Release.Name .Release.Namespace | trunc 63 | trimSuffix "-" }}
+{{- end }}
