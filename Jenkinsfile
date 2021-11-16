@@ -61,14 +61,11 @@ pipeline {
         }
         stage('Deploy Helm Charts'){
             steps {
-                
                 withCredentials([usernamePassword(credentialsId: 'BitbucketUser', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-                    sh """
-                    echo Building helm chart for application ${JOB_BASE_NAME}
-                    helm repo add bitbucket ${CHART_REPO} --username=$USERNAME --password=${PASSWORD}
-                    helm search repo bitbucket
-                    helm repo update
-                    """
+                    sh 'echo Building helm chart for application ${JOB_BASE_NAME}'
+                    sh 'helm repo add bitbucket ${CHART_REPO} --username=$USERNAME --password=${PASSWORD}'
+                    sh 'helm search repo bitbucket'
+                    sh 'helm repo update'
                     script {
                         NAMESPACE   = env.JOB_BASE_NAME.split('-')[0].concat('-'+params.ENVIRONMENT)
                         withAWS(roleAccount: ACC_NO, role:'sharedservices-crossaccount-role'){  
@@ -76,10 +73,8 @@ pipeline {
                             helm secrets upgrade --install ${JOB_BASE_NAME} bitbucket/${JOB_BASE_NAME} -n ${NAMESPACE} -f helm_vars/${params.ENVIRONMENT}/configmap.yaml -f helm_vars/${params.ENVIRONMENT}/secrets.yaml --set image.application.tag=${params.IMAGE_TAG} --set targetGroupBinding.arn=${TG_ARN}                    
                             """
                         }
+                    }
                 }
-                }
-               
-                
             }
         }
     }
