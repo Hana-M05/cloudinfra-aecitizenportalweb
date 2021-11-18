@@ -36,11 +36,11 @@ pipeline {
         string(name: 'IMAGE_TAG', defaultValue: '1.0.1', description: 'enter the latest image tag')
     }
     stages {
-        stage('checkout code from bitbucket') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'BitbucketUser', url: 'https://code.dudesoln.com/scm/cmc/${JOB_BASE_NAME}.git']]]) 
-            }
-        }
+        // stage('checkout code from bitbucket') {
+        //     steps {
+        //         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'BitbucketUser', url: 'https://code.dudesoln.com/scm/cmc/${JOB_BASE_NAME}.git']]]) 
+        //     }
+        // }
         stage('Get LB Details'){
             steps {
                 script {
