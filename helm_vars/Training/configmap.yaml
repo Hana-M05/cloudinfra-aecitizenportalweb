@@ -1,0 +1,24 @@
+config:
+  SERVICENAME: CITIZENPORTALAPI
+  CORECLR_ENABLE_PROFILING: 1
+  HOSTNAME: 346020e55146
+  DEBUG: 0
+  CORECLR_PROFILER_PATH: /opt/datadog/Datadog.Trace.ClrProfiler.Native.so
+  DD_TRACE_ANALYTICS_ENABLED: true
+  HOME: /root
+  CitizenPortalApi_ServiceName: CitizenPortalApi
+  DOTNET_RUNNING_IN_CONTAINER: true
+  DD_INTEGRATIONS: /opt/datadog/integrations.json
+  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  CitizenPortalApi_EnvironmentCode: DM
+  CitizenPortalApi_Urls: http://v1-citizenportal-demo.dudesolutions.io
+  DD_DOTNET_TRACER_HOME: /opt/datadog
+  CitizenPortalApi_SecretsPath: /etc/secrets
+  DD_AGENT_HOST: datadog_agent
+  ASPNETCORE_URLS: http://+:80
+  DD_TRACE_AGENT_PORT: 8126
+  PWD: /app
+  NEW_RELIC_APP_NAME: AE.DM.CitizenPortalApi
+  NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
+  CORECLR_PROFILER: '{846F5F1C-F9AE-4B07-969E-05C26BC060D8}'
+  Datadog_ClusterName: eks-ue1-prod
