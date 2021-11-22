@@ -1,0 +1,3 @@
+---
+creation_rules:
+  - kms: 'arn:aws:kms:us-east-1:695288531576:key/mrk-d082fe4d216047eda6738d1c3f61afbf'
