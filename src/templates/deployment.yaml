@@ -74,9 +74,9 @@ spec:
                 fieldRef:
                   fieldPath: status.podIP
             - name: DD_TAGS
-              value: "env:master service:citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:citizenportalweb"
+              value: "env:master service:citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:citizenportalweb"
             - name: DD_DOGSTATSD_TAGS
-              value: "env:master service:citizenportalweb version:v1 node_name:${MY_NODE_NAME} pod_name:${MY_POD_NAME} pod_ip:${MY_POD_IP} kube_namespace:${MY_POD_NAMESPACE} kube_deployment:citizenportalweb"
+              value: "env:master service:citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:citizenportalweb"
             - name: DD_API_KEY
               valueFrom:
                 secretKeyRef:
