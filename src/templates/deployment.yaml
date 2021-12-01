@@ -79,10 +79,15 @@ spec:
                 configMapKeyRef:
                   name: {{ include "citizenportalweb.configmap" . }}
                   key: Datadog_Env
+            - name: MY_CLUSTER
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "citizenportalweb.configmap" . }}
+                  key: Datadog_ClusterName
             - name: DD_TAGS
-              value: "env:$(MY_ENV) service:ae-citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-citizenportalweb"
+              value: "env:$(MY_ENV) service:ae-citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-citizenportalweb kube_cluster_name:$(MY_CLUSTER)"
             - name: DD_DOGSTATSD_TAGS
-              value: "env:$(MY_ENV) service:ae-citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-citizenportalweb"
+              value: "env:$(MY_ENV) service:ae-citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-citizenportalweb kube_cluster_name:$(MY_CLUSTER)"
             - name: DD_API_KEY
               valueFrom:
                 secretKeyRef:
