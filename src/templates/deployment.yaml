@@ -15,10 +15,8 @@ spec:
       {{- include "citizenportalweb.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
         {{- include "citizenportalweb.selectorLabels" . | nindent 8 }}
     spec:
