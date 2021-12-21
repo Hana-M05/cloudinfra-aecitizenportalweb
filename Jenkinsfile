@@ -4,8 +4,8 @@ def cluster_dtls = [
     apple: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     blue: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     perf: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
-    hotfix: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
-    int0: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    //hotfix: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    //int0: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     int1: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     int2: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     int3: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
@@ -14,13 +14,23 @@ def cluster_dtls = [
     int6: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     int7: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     int8: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
-    int9: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
-    inta: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    //int9: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    //inta: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
     prod: [ cluster: 'eks-ue1-prod', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
     staging: [ cluster: 'eks-ue1-staging', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
     demo: [ cluster: 'eks-ue1-demo', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
     training: [ cluster: 'eks-ue1-training', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
 ]
+def getEnvList() {
+    if("${JENKINS_URL}".contains("lzprod")){
+        return ["staging","prod","demo","training"]
+    }
+    else {
+        return ["master","apple","orange","blue","perf","int1","int2","int3","int4","int5","int6","int7","int8"]
+    }
+    
+}
+def ENV_LIST = getEnvList().join('\n')
 pipeline {
     agent {
             ecs {
@@ -32,7 +42,7 @@ pipeline {
     }
     parameters {
         //string(name: 'APP_NAME', defaultValue: 'api', description: 'enter the name of application to be deployed')
-        choice(name: 'ENVIRONMENT', choices: "${cluster_dtls.keySet().join('\n')}")
+        choice(name: 'ENVIRONMENT', choices: ENV_LIST)
         string(name: 'IMAGE_TAG', defaultValue: '1.0.1', description: 'enter the latest image tag')
     }
     stages {
