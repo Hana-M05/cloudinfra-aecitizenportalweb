@@ -1,25 +1,25 @@
 def cluster_dtls = [
-    master: [ cluster: 'eks-ue1-master', acc_no: '704173473619', region: 'us-east-1'],
-    orange: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    apple: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    blue: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    perf: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    hotfix: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int0: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int1: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int2: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'], 
-    int3: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int4: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int5: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int6: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int7: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int8: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    int9: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    inta: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1'],
-    prod: [ cluster: 'eks-ue1-prod', acc_no: '695288531576', region: 'us-east-1'],
-    staging: [ cluster: 'eks-ue1-staging', acc_no: '695288531576', region: 'us-east-1'],
-    demo: [ cluster: 'eks-ue1-demo', acc_no: '695288531576', region: 'us-east-1'],
-    training: [ cluster: 'eks-ue1-training', acc_no: '695288531576', region: 'us-east-1'],
+    master: [ cluster: 'eks-ue1-master', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    orange: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    apple: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    blue: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    perf: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    hotfix: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int0: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int1: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int2: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int3: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int4: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int5: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int6: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int7: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int8: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    int9: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    inta: [ cluster: 'eks-ue1-dev', acc_no: '704173473619', region: 'us-east-1', sns: 'jenkinsnotify-ue1-dev-primary'],
+    prod: [ cluster: 'eks-ue1-prod', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
+    staging: [ cluster: 'eks-ue1-staging', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
+    demo: [ cluster: 'eks-ue1-demo', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
+    training: [ cluster: 'eks-ue1-training', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
 ]
 pipeline {
     agent {
@@ -70,11 +70,26 @@ pipeline {
                         NAMESPACE   = env.JOB_BASE_NAME.split('-')[0].concat('-'+params.ENVIRONMENT)
                         withAWS(roleAccount: ACC_NO, role:'sharedservices-crossaccount-role'){  
                             sh """
-                            helm secrets upgrade --install ${JOB_BASE_NAME} bitbucket/${JOB_BASE_NAME} -n ${NAMESPACE} -f helm_vars/${params.ENVIRONMENT}/configmap.yaml -f helm_vars/${params.ENVIRONMENT}/secrets.yaml --set image.application.tag=${params.IMAGE_TAG} --set targetGroupBinding.arn=${TG_ARN}                    
+                            helm secrets upgrade --install ${JOB_BASE_NAME} bitbucket/${JOB_BASE_NAME} -n ${NAMESPACE} -f helm_vars/${params.ENVIRONMENT}/configmap.yaml -f helm_vars/${params.ENVIRONMENT}/secrets.yaml --set image.application.tag=${params.IMAGE_TAG} --set targetGroupBinding.arn=${TG_ARN} > output.txt 2>&1
                             """
                         }
                     }
                 }
+            }
+        }
+    }
+    post {
+        failure {
+            script {
+                sh 'cat output.txt'
+              	TOPIC_NAME = cluster_dtls[params.ENVIRONMENT].sns
+              	println TOPIC_NAME
+                env.FILENAME = readFile 'output.txt'
+                snsPublish(
+                    topicArn: "arn:aws:sns:${REGION}:${ACC_NO}:${TOPIC_NAME}",
+                    subject: 'Build failed!['+env.BUILD_URL+']',
+                    message: env.FILENAME,
+                )
             }
         }
     }
