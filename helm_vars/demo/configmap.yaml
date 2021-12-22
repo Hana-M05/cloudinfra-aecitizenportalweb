@@ -13,5 +13,5 @@ config:
   PWD: /
   NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
   NEW_RELIC_APP_NAME: AE.DM.CitizenPortalWeb
-  Datadog_ClusterName: eks-ue1-prod
+  Datadog_ClusterName: eks-ue1-demo
   Datadog_Env:  Demo
