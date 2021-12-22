@@ -21,5 +21,5 @@ config:
   NEW_RELIC_APP_NAME: AE.DM.CitizenPortalApi
   NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
   CORECLR_PROFILER: '{846F5F1C-F9AE-4B07-969E-05C26BC060D8}'
-  Datadog_ClusterName: eks-ue1-prod
+  Datadog_ClusterName: eks-ue1-training
   Datadog_Env:  Training
