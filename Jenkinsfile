@@ -89,6 +89,10 @@ pipeline {
         }
     }
     post {
+        success {
+            echo 'The job has been completed successfully'
+            sh 'cat output.txt'
+        }
         failure {
             script {
                 sh 'cat output.txt'
