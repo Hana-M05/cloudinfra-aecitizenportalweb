@@ -13,7 +13,7 @@ config:
   CitizenPortalApi_EnvironmentCode: DM
   CitizenPortalApi_Urls: http://v1-citizenportal-demo.dudesolutions.io
   DD_DOTNET_TRACER_HOME: /opt/datadog
-  CitizenPortalApi_SecretsPath: /etc/secrets
+  CitizenPortalWeb_SecretsPath: /etc/secrets
   DD_AGENT_HOST: datadog_agent
   ASPNETCORE_URLS: http://+:80
   DD_TRACE_AGENT_PORT: 8126
