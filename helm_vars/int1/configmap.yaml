@@ -13,7 +13,7 @@ config:
   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
   NEW_RELIC_APP_NAME: AE.I1.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-dev
-  Datadog_Env: Int1
+  Datadog_Env: int1
   Logging__LogLevel: Information
   Logging__ApplicationName: MobileBroker
   Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599

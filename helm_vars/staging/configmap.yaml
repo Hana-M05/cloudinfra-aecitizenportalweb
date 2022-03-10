@@ -15,3 +15,9 @@ config:
   NEW_RELIC_APP_NAME: AE.ST.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-staging
   Datadog_Env:  Staging
+  Logging__LogLevel: Information
+  Logging__ApplicationName: MobileBroker
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__EnvironmentName: Staging
+  Logging__LogLevelOverrides__Microsoft: Warning
+  Logging__LogLevelOverrides__System: Warning
