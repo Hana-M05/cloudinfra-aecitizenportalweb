@@ -15,3 +15,15 @@ config:
   NEW_RELIC_APP_NAME: AE.PD.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-prod
   Datadog_Env: Production
+  Logging__LogLevel: Information
+  Logging__ApplicationName: MobileBroker
+  Logging__HttpLoggingEndpoint: 0
+  Logging__EnvironmentName: master
+  Logging__LogLevelOverrides__Microsoft: Warning
+  Logging__LogLevelOverrides__System: Warning
+  Logging__LogLevel: Information
+  Logging__ApplicationName: MobileBroker
+  Logging__HttpLoggingEndpoint: 0
+  Logging__EnvironmentName: master
+  Logging__LogLevelOverrides__Microsoft: Warning
+  Logging__LogLevelOverrides__System: Warning

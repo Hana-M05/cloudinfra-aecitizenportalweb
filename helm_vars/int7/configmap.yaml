@@ -14,3 +14,9 @@ config:
   NEW_RELIC_APP_NAME: AE.I7.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-dev
   Datadog_Env:  Int7
+  Logging__LogLevel: Information
+  Logging__ApplicationName: MobileBroker
+  Logging__HttpLoggingEndpoint: 0
+  Logging__EnvironmentName: master
+  Logging__LogLevelOverrides__Microsoft: Warning
+  Logging__LogLevelOverrides__System: Warning
