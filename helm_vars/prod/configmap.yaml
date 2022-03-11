@@ -1,7 +1,6 @@
 config:
   SERVICENAME: CITIZENPORTALWEB
   DEBUG: 0
-  HOSTNAME: 6e441fe58c12
   SHLVL: 1
   HOME: /root
   CitizenPortalWeb_ServiceName: CitizenPortalWeb
