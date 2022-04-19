@@ -1,6 +1,6 @@
 apiVersion: v2
-name: ae-citizenportalweb
-description: A Helm chart for creating ae-citizenportalweb API
+name: ae-loginservice
+description: A Helm chart for creating ae-loginservice
 type: application
 version: 0.1.0
-appVersion: "1.2.295"
+appVersion: "30" # NEED TO BE UPDATED AS TAG IMAGE

@@ -1,4 +1,4 @@
-# Default values for ae-citizenportalweb.
+# Default values for ae-loginservice
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -6,11 +6,11 @@ replicaCount: 2
 
 image:
   application:
-    repository: 704173473619.dkr.ecr.us-east-1.amazonaws.com/ae-citizenportalweb
+    repository: 704173473619.dkr.ecr.us-east-1.amazonaws.com/ae-login-service
     #repository: nginx
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.2.295"
+    tag: "30" # THIS VERSION NEED TO BE FIXED
     #tag: latest
     imagePullSecrets: []
 
@@ -24,7 +24,7 @@ application:
       memory: 512Mi
   volume_secret:
     present: true
-    name: ae-citizenportalweb-secrets
+    name: ae-loginservices-secrets
     mountPath: /etc/secrets
 
 configmap:
@@ -43,7 +43,7 @@ namespace:
 serviceAccount:
   create: true
   annotations: {}
-  name: ae-citizenportalweb
+  name: ae-loginservices
 
 ingress:
   enabled: false

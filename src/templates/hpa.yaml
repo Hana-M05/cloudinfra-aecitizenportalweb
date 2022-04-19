@@ -2,15 +2,15 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "citizenportalweb.fullname" . }}
-  namespace: {{ include "citizenportalweb.namespace" . }}
+  name: {{ include "loginservice.fullname" . }}
+  namespace: {{ include "loginservice.namespace" . }}
   labels:
-    {{- include "citizenportalweb.labels" . | nindent 4 }}
+    {{- include "loginservice.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "citizenportalweb.fullname" . }}
+    name: {{ include "loginservice.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "citizenportalweb.name" -}}
+{{- define "loginservice.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "citizenportalweb.fullname" -}}
+{{- define "loginservice.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,7 +26,7 @@ If release name contains chart name it will be used as a full name.
 {{/* 
 Create configmap name 
 */}}
-{{- define "citizenportalweb.configmap" }}
+{{- define "loginservice.configmap" }}
 {{- if .Values.configmap.name }}
 {{- .Values.configmap.name }}
 {{- else }}
@@ -37,7 +37,7 @@ Create configmap name
 {{/* 
 Create secrets 
 */}}
-{{- define "citizenportalweb.secrets" }}
+{{- define "loginservice.secrets" }}
 {{- if .Values.secretdtls.name }}
 {{- .Values.secretdtls.name }}
 {{- else }}
@@ -47,7 +47,7 @@ Create secrets
 {{/*
 Create Namespace 
 */}}
-{{- define "citizenportalweb.namespace" }}
+{{- define "loginservice.namespace" }}
 {{- if .Release.Namespace }}
 {{- .Release.Namespace }}
 {{- else }}
@@ -57,16 +57,16 @@ Create Namespace
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "citizenportalweb.chart" -}}
+{{- define "loginservice.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "citizenportalweb.labels" -}}
-helm.sh/chart: {{ include "citizenportalweb.chart" . }}
-{{ include "citizenportalweb.selectorLabels" . }}
+{{- define "loginservice.labels" -}}
+helm.sh/chart: {{ include "loginservice.chart" . }}
+{{ include "loginservice.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -77,17 +77,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "citizenportalweb.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "citizenportalweb.name" . }}
+{{- define "loginservice.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "loginservice.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "citizenportalweb.serviceAccountName" -}}
+{{- define "loginservice.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "citizenportalweb.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "loginservice.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
@@ -96,7 +96,7 @@ Create the name of the service account to use
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "citizenportalweb.clusterrole" -}}
+{{- define "loginservice.clusterrole" -}}
 {{- printf "%s-%s" .Release.Name .Release.Namespace | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -104,6 +104,6 @@ Expand the name of the chart.
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "citizenportalweb.clusterrolebinding" -}}
+{{- define "loginservice.clusterrolebinding" -}}
 {{- printf "%s-%s" .Release.Name .Release.Namespace | trunc 63 | trimSuffix "-" }}
 {{- end }}

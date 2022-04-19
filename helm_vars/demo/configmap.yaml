@@ -7,7 +7,7 @@ config:
   NGINX_VERSION: 1.13.12
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   CitizenPortalWeb_EnvironmentCode: DM
-  CitizenPortalWeb_Urls: http://citizenportal-demo.dudesolutions.com
+  CitizenPortalWeb_Urls: http://loginservice-demo.dudesolutions.com
   CitizenPortalWeb_SecretsPath: /etc/secrets
   PWD: /
   NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c

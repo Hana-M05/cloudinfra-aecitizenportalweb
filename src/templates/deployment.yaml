@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "citizenportalweb.fullname" . }}
-  namespace: {{ include "citizenportalweb.namespace" . }}
+  name: {{ include "loginservice.fullname" . }}
+  namespace: {{ include "loginservice.namespace" . }}
   labels:
-    {{- include "citizenportalweb.labels" . | nindent 4 }}
+    {{- include "loginservice.labels" . | nindent 4 }}
 spec:
   #Uncomment below if the replica count has to be 1
   #{{- if not .Values.autoscaling.enabled }}
@@ -12,19 +12,19 @@ spec:
   #{{- end }}
   selector:
     matchLabels:
-      {{- include "citizenportalweb.selectorLabels" . | nindent 6 }}
+      {{- include "loginservice.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
-        {{- include "citizenportalweb.selectorLabels" . | nindent 8 }}
+        {{- include "loginservice.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.image.application.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "citizenportalweb.serviceAccountName" . }}
+      serviceAccountName: {{ include "loginservice.serviceAccountName" . }}
       shareProcessNamespace: true
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
@@ -42,7 +42,7 @@ spec:
             {{- toYaml .Values.application.resources | nindent 12 }}
           envFrom:
             - configMapRef:
-                name: {{ include "citizenportalweb.configmap" . }}
+                name: {{ include "loginservice.configmap" . }}
           {{- if .Values.application.volume_secret.present }}
           volumeMounts:
             - name: {{ .Values.application.volume_secret.name }}
@@ -75,21 +75,21 @@ spec:
             - name: MY_ENV
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "citizenportalweb.configmap" . }}
+                  name: {{ include "loginservice.configmap" . }}
                   key: Datadog_Env
             - name: MY_CLUSTER
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "citizenportalweb.configmap" . }}
+                  name: {{ include "loginservice.configmap" . }}
                   key: Datadog_ClusterName
             - name: DD_TAGS
-              value: "env:$(MY_ENV) service:ae-citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-citizenportalweb kube_cluster_name:$(MY_CLUSTER)"
+              value: "env:$(MY_ENV) service:ae-loginservice version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-loginservice kube_cluster_name:$(MY_CLUSTER)"
             - name: DD_DOGSTATSD_TAGS
-              value: "env:$(MY_ENV) service:ae-citizenportalweb version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-citizenportalweb kube_cluster_name:$(MY_CLUSTER)"
+              value: "env:$(MY_ENV) service:ae-loginservice version:v1 node_name:$(MY_NODE_NAME) pod_name:$(MY_POD_NAME) pod_ip:$(MY_POD_IP) kube_namespace:$(MY_POD_NAMESPACE) kube_deployment:ae-loginservice kube_cluster_name:$(MY_CLUSTER)"
             - name: DD_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "citizenportalweb.secrets" . }}
+                  name: {{ include "loginservice.secrets" . }}
                   key: Datadog_ApiKey
             - name: DD_SITE
               value: "datadoghq.com"
@@ -109,7 +109,7 @@ spec:
             - name: DD_CLUSTER_NAME
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "citizenportalweb.configmap" . }}
+                  name: {{ include "loginservice.configmap" . }}
                   key: Datadog_ClusterName            
             - name: DD_CHECKS_TAG_CARDINALITY
               value: "high"
@@ -128,7 +128,7 @@ spec:
             - name: DD_CLUSTER_AGENT_AUTH_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "citizenportalweb.secrets" . }}
+                  name: {{ include "loginservice.secrets" . }}
                   key: Datadog_Cluster_Agent_Token
             - name: DATADOG_CLUSTER_AGENT
               value: "dd-datadog-cluster-agent"
@@ -157,7 +157,7 @@ spec:
       volumes:
         - name: {{ .Values.application.volume_secret.name }}
           secret:
-            secretName: {{ include "citizenportalweb.secrets" . }}
+            secretName: {{ include "loginservice.secrets" . }}
       {{- end }}  
       {{- with .Values.nodeSelector }}
       nodeSelector:

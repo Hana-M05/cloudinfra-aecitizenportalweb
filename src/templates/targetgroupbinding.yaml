@@ -2,13 +2,13 @@
 apiVersion: elbv2.k8s.aws/v1beta1
 kind: TargetGroupBinding
 metadata:
-  name: {{ include "citizenportalweb.fullname" . }}
-  namespace: {{ include "citizenportalweb.namespace" . }}
+  name: {{ include "loginservice.fullname" . }}
+  namespace: {{ include "loginservice.namespace" . }}
   labels:
-    {{- include "citizenportalweb.labels" . | nindent 4 }}
+    {{- include "loginservice.labels" . | nindent 4 }}
 spec:
     serviceRef:
-        name: {{ include "citizenportalweb.fullname" . }}
+        name: {{ include "loginservice.fullname" . }}
         port: {{ .Values.service.port }}
     targetGroupARN: {{ .Values.targetGroupBinding.arn }}
     targetType: ip
