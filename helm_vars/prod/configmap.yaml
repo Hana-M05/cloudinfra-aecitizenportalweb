@@ -15,3 +15,7 @@ config:
   NEW_RELIC_APP_NAME: AE.PD.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-prod
   Datadog_Env: Production
+  CitizenPortal_DataDogApplicationId: 1c0fa240-749b-4f91-b1b1-595b47d479e3
+  CitizenPortal_DataDogClientToken: pub9bcc848ad828984b7af24a14602811c9
+  CitizenPortal_DataDogServiceName: citizenportalweb-production
+  CitizenPortal_DataDogRumSamplingRate: 5
