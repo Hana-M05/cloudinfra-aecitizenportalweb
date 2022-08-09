@@ -15,7 +15,7 @@ config:
   NEW_RELIC_APP_NAME: AE.DM.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-demo
   Datadog_Env:  Demo
-  CitizenPortal__DataDogApplicationId: 6108bf17-8c19-4600-b417-1bab893b3a7c
-  CitizenPortal__DataDogClientToken: pube8c764848a9f98cf8640ced7ef4df55a
+  CitizenPortal__DataDogApplicationId: 69efa0e1-0dad-4cce-8f43-e26dd94dd3e8
+  CitizenPortal__DataDogClientToken: pubb49c85882e280038debde38e4c3dab29
   CitizenPortal__DataDogRumSamplingRate: 5
   CitizenPortal__DataDogEnvironmentName: dm
