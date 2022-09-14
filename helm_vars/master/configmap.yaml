@@ -17,5 +17,5 @@ config:
   Datadog_Env:  Master
   CitizenPortal__DataDogApplicationId: f09867f3-72dc-408d-9421-87d2080da296
   CitizenPortal__DataDogClientToken: pubd10986925fa5c6b6e0e02c18b3d2c04b
-  CitizenPortal__DataDogRumSamplingRate: 5
+  CitizenPortal__DataDogRumSamplingRate: 50
   CitizenPortal__DataDogEnvironmentName: ms

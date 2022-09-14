@@ -17,5 +17,5 @@ config:
   Datadog_Env: Production
   CitizenPortal__DataDogApplicationId: 1c0fa240-749b-4f91-b1b1-595b47d479e3
   CitizenPortal__DataDogClientToken: pub9bcc848ad828984b7af24a14602811c9
-  CitizenPortal__DataDogRumSamplingRate: 5
+  CitizenPortal__DataDogRumSamplingRate: 50
   CitizenPortal__DataDogEnvironmentName: pd

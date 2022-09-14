@@ -17,5 +17,5 @@ config:
   Datadog_Env:  Demo
   CitizenPortal__DataDogApplicationId: 69efa0e1-0dad-4cce-8f43-e26dd94dd3e8
   CitizenPortal__DataDogClientToken: pubb49c85882e280038debde38e4c3dab29
-  CitizenPortal__DataDogRumSamplingRate: 5
+  CitizenPortal__DataDogRumSamplingRate: 50
   CitizenPortal__DataDogEnvironmentName: dm
