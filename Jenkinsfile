@@ -80,7 +80,7 @@ pipeline {
                         NAMESPACE   = env.JOB_BASE_NAME.split('-')[0].concat('-'+params.ENVIRONMENT)
                         withAWS(roleAccount: ACC_NO, role:'sharedservices-crossaccount-role'){  
                             sh """
-                            helm secrets upgrade --install ${JOB_BASE_NAME} bitbucket/${JOB_BASE_NAME} -n ${NAMESPACE} -f helm_vars/${params.ENVIRONMENT}/configmap.yaml -f helm_vars/${params.ENVIRONMENT}/secrets.yaml --set image.application.tag=${params.IMAGE_TAG} --set targetGroupBinding.arn=${TG_ARN} > output.txt 2>&1
+                            helm secrets upgrade --atomic --install ${JOB_BASE_NAME} bitbucket/${JOB_BASE_NAME} -n ${NAMESPACE} -f helm_vars/${params.ENVIRONMENT}/configmap.yaml -f helm_vars/${params.ENVIRONMENT}/secrets.yaml --set image.application.tag=${params.IMAGE_TAG} --set targetGroupBinding.arn=${TG_ARN} > output.txt 2>&1
                             """
                         }
                     }
