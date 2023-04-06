@@ -8,6 +8,8 @@ config:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   CitizenPortalWeb_EnvironmentCode: I5
   CitizenPortalWeb_Urls: http://citizenportal-integration5.dudesoln.com
+  CitizenPortal__Auth0AuthorityUri : https://auth0-ae-poc.brightlysoftware.ca
+  CitizenPortal__Auth0ClientId : 2LcQ6D8bqEmhmTegO2gJjoBE7tMjDht9
   CitizenPortalWeb_SecretsPath: /etc/secrets
   PWD: /
   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
