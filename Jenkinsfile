@@ -48,7 +48,7 @@ pipeline {
     stages {
         // stage('checkout code from bitbucket') {
         //     steps {
-        //         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'BitbucketOrg', url: 'https://code.dudesoln.com/scm/cmc/${JOB_BASE_NAME}.git']]]) 
+        //         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'BitbucketOrg', url: 'https://bitbucket.org/DudeSolutions/${JOB_BASE_NAME}.git']]]) 
         //     }
         // }
         stage('Get LB Details'){
