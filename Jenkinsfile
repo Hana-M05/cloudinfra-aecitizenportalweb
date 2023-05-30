@@ -38,7 +38,7 @@ pipeline {
         }
     }
     environment {
-        CHART_REPO="https://code.dudesoln.com/projects/CMC/repos/eks-helm-charts/raw/"
+        CHART_REPO="https://api.bitbucket.org/2.0/repositories/DudeSolutions/eks-helm-charts/src/master"
     }
     parameters {
         //string(name: 'APP_NAME', defaultValue: 'api', description: 'enter the name of application to be deployed')
@@ -48,7 +48,7 @@ pipeline {
     stages {
         // stage('checkout code from bitbucket') {
         //     steps {
-        //         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'BitbucketUser', url: 'https://code.dudesoln.com/scm/cmc/${JOB_BASE_NAME}.git']]]) 
+        //         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'BitbucketOrg', url: 'https://code.dudesoln.com/scm/cmc/${JOB_BASE_NAME}.git']]]) 
         //     }
         // }
         stage('Get LB Details'){
@@ -71,7 +71,7 @@ pipeline {
         }
         stage('Deploy Helm Charts'){
             steps {
-                withCredentials([usernamePassword(credentialsId: 'BitbucketUser', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+                withCredentials([usernamePassword(credentialsId: 'BitbucketOrg', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                     sh 'echo Building helm chart for application ${JOB_BASE_NAME}'
                     sh 'helm repo add bitbucket ${CHART_REPO} --username=$USERNAME --password=${PASSWORD}'
                     sh 'helm search repo bitbucket'
