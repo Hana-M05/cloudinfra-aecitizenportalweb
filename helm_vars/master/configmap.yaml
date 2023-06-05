@@ -9,8 +9,10 @@ config:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   CitizenPortalWeb_EnvironmentCode: MS
   CitizenPortalWeb_Urls: http://citizenportal-master.dudesoln.com
+  CitizenPortal__baseUriSignup : https://auth-master.dudesoln.com
   CitizenPortal__Auth0AuthorityUri : https://auth0-ae-poc.brightlysoftware.ca
-  CitizenPortal__Auth0ClientId : 2LcQ6D8bqEmhmTegO2gJjoBE7tMjDht9
+  CitizenPortal__Auth0ClientId : FSy2rHpOnzsjG6D1mHnM08aowHqfIwJx
+  CitizenPortal__Auth0ApiResource : citizenportalapi.master
   CitizenPortalWeb_SecretsPath: /etc/secrets
   PWD: /
   NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c

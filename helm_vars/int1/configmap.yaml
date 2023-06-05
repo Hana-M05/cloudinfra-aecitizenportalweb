@@ -9,7 +9,9 @@ config:
   CitizenPortalWeb_EnvironmentCode: I1
   CitizenPortalWeb_Urls: http://citizenportal-integration1.dudesoln.com
   CitizenPortal__Auth0AuthorityUri : https://auth0-ae-poc.brightlysoftware.ca
-  CitizenPortal__Auth0ClientId : 2LcQ6D8bqEmhmTegO2gJjoBE7tMjDht9
+  CitizenPortal__baseUriSignup : https://auth-integration1.dudesoln.com
+  CitizenPortal__Auth0ClientId : 5oU9UAVcP2kOfc49qOt16FvLeqhfyjoV 
+  CitizenPortal__Auth0ApiResource : citizenportalapi.integration1
   CitizenPortalWeb_SecretsPath: /etc/secrets
   PWD: /
   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
