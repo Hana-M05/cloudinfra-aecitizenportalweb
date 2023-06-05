@@ -9,6 +9,7 @@ config:
   CitizenPortalWeb_EnvironmentCode: I1
   CitizenPortalWeb_Urls: http://citizenportal-integration1.dudesoln.com
   CitizenPortal__Auth0AuthorityUri : https://auth0-ae-poc.brightlysoftware.ca
+  CitizenPortal__baseUriSignup : https://auth-integration1.dudesoln.com
   CitizenPortal__Auth0ClientId : 2LcQ6D8bqEmhmTegO2gJjoBE7tMjDht9
   CitizenPortalWeb_SecretsPath: /etc/secrets
   PWD: /

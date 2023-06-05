@@ -8,6 +8,7 @@ config:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   CitizenPortalWeb_EnvironmentCode: I5
   CitizenPortalWeb_Urls: http://citizenportal-integration5.dudesoln.com
+  CitizenPortal__baseUriSignup : https://auth-integration5.dudesoln.com
   CitizenPortal__Auth0AuthorityUri : https://auth0-ae-poc.brightlysoftware.ca
   CitizenPortal__Auth0ClientId : 2LcQ6D8bqEmhmTegO2gJjoBE7tMjDht9
   CitizenPortalWeb_SecretsPath: /etc/secrets
