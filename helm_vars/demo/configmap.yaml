@@ -19,3 +19,7 @@ config:
   CitizenPortal__DataDogClientToken: pubb49c85882e280038debde38e4c3dab29
   CitizenPortal__DataDogRumSamplingRate: 50
   CitizenPortal__DataDogEnvironmentName: dm
+  CitizenPortal__baseUriSignup : https://auth-demo.dudesoln.com
+  CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
+  CitizenPortal__Auth0ClientId : YxDaxu2UqEcPIHgYLco5SS0cucCOcWKm
+  CitizenPortal__Auth0ApiResource : citizenportalapi.demo
