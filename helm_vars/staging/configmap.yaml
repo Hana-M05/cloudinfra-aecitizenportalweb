@@ -17,5 +17,5 @@ config:
   Datadog_Env:  Staging
   CitizenPortal__baseUriSignup : https://auth.dudesoln.net
   CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com
-  CitizenPortal__Auth0ClientId : e3k8yw0pRichbqUjqMkFPAlqn74tiOqB
+  CitizenPortal__Auth0ClientId : nzKQ3F7NGsiqqZODLxY49k7PyTLw6WsJ
   CitizenPortal__Auth0ApiResource : citizenportalapi.staging
