@@ -15,3 +15,7 @@ config:
   NEW_RELIC_APP_NAME: AE.TR.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-training
   Datadog_Env:  Training
+  CitizenPortal__baseUriSignup : https://auth-training.dudesoln.com
+  CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
+  CitizenPortal__Auth0ClientId : b0HApRGXZmCxFqBQ9245z3fUg4zPRevb
+  CitizenPortal__Auth0ApiResource : citizenportalapi.training
