@@ -8,9 +8,9 @@ config:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   CitizenPortalWeb_EnvironmentCode: I1
   CitizenPortalWeb_Urls: http://citizenportal-integration1.dudesoln.com
-  CitizenPortal__Auth0AuthorityUri : https://auth0-ae-poc.brightlysoftware.ca
+  CitizenPortal__Auth0AuthorityUri : https://sandbox.auth.brightlysoftware.com
   CitizenPortal__baseUriSignup : https://auth-integration1.dudesoln.com
-  CitizenPortal__Auth0ClientId : 5oU9UAVcP2kOfc49qOt16FvLeqhfyjoV 
+  CitizenPortal__Auth0ClientId : YQz8WPha3Pn6HcdJdx6W9FrkpX9xM82n
   CitizenPortal__Auth0ApiResource : citizenportalapi.integration1
   CitizenPortalWeb_SecretsPath: /etc/secrets
   PWD: /
