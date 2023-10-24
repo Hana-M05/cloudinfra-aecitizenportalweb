@@ -148,11 +148,11 @@ spec:
               value: "true"              
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "200m"
+              memory: "512Mi"
+              cpu: "800m"
             limits:
-              memory: "256Mi"
-              cpu: "200m"  
+              memory: "512Mi"
+              cpu: "800m"  
       {{- if .Values.application.volume_secret.present }}
       volumes:
         - name: {{ .Values.application.volume_secret.name }}

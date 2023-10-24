@@ -23,9 +23,3 @@ config:
   CitizenPortal__DataDogClientToken: pubd10986925fa5c6b6e0e02c18b3d2c04b
   CitizenPortal__DataDogRumSamplingRate: 50
   CitizenPortal__DataDogEnvironmentName: ms
-replicaCount: 1
-autoscaling:
-  enabled: true
-  minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 85
