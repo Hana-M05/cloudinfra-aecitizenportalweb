@@ -8,7 +8,7 @@ config:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   CitizenPortalWeb_EnvironmentCode: I6
   CitizenPortalWeb_Urls: http://citizenportal-integration6.dudesoln.com
-  CitizenPortal__baseUriSignup : https://auth.dudesoln.net
+  CitizenPortal__baseUriSignup : https://auth-integration6.dudesoln.com
   CitizenPortal__Auth0AuthorityUri : https://dev.auth.brightlysoftware.com
   CitizenPortal__Auth0ClientId : g0tYneMSHyOovYem212yHWHZPNL0iqbu
   CitizenPortal__Auth0ApiResource : citizenportalapi.integration6
