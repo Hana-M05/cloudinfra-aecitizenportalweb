@@ -49,7 +49,7 @@ spec:
               mountPath: {{ .Values.application.volume_secret.mountPath }}
           {{- end }}
          ## Running the Agent as a sidecar
-        - image: datadog/agent
+        - image: public.ecr.aws/datadog/agent:latest
           name: datadog-agent
           env:
             - name: DD_COLLECT_KUBERNETES_EVENTS
