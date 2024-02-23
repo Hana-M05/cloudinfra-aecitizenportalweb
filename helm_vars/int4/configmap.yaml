@@ -18,6 +18,10 @@ config:
   NEW_RELIC_APP_NAME: AE.I4.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-dev
   Datadog_Env:  Int4
+  Logging__ApplicationName: citizenportalweb
+  Logging__EnvironmentName: Integration4
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__LogLevel: Information
 replicaCount: 1
 autoscaling:
   enabled: true
