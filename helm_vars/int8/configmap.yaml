@@ -3,6 +3,10 @@ config:
   DEBUG: 0
   SHLVL: 1
   HOME: /root
+  Logging__ApplicationName: citizenportalweb
+  Logging__EnvironmentName: Integration8
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__LogLevel: Information
   CitizenPortalWeb_ServiceName: CitizenPortalWeb
   NGINX_VERSION: 1.13.12
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
