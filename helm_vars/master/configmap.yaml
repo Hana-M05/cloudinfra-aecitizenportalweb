@@ -23,6 +23,10 @@ config:
   CitizenPortal__DataDogClientToken: pubd10986925fa5c6b6e0e02c18b3d2c04b
   CitizenPortal__DataDogRumSamplingRate: 50
   CitizenPortal__DataDogEnvironmentName: ms
+  Logging__ApplicationName: citizenportalweb
+  Logging__EnvironmentName: Master
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__LogLevel: Information
 replicaCount: 1
 autoscaling:
   enabled: true
