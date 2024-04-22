@@ -27,6 +27,7 @@ config:
   Logging__EnvironmentName: Master
   Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
   Logging__LogLevel: Information
+  ASPNETCORE_ENVIRONMENT: Master
 replicaCount: 1
 autoscaling:
   enabled: true
