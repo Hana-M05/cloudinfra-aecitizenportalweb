@@ -22,6 +22,7 @@ config:
   NEW_RELIC_APP_NAME: AE.I8.CitizenPortalWeb
   Datadog_ClusterName: eks-ue1-dev
   Datadog_Env:  Int8
+  ASPNETCORE_ENVIRONMENT: Integration8
 replicaCount: 1
 autoscaling:
   enabled: true
