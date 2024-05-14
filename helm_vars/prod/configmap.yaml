@@ -1,25 +1,30 @@
 config:
-  SERVICENAME: CITIZENPORTALWEB
-  DEBUG: 0
-  HOSTNAME: 6e441fe58c12
-  SHLVL: 1
-  HOME: /root
-  CitizenPortalWeb_ServiceName: CitizenPortalWeb
-  NGINX_VERSION: 1.13.12
-  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  ASPNETCORE_ENVIRONMENT: Production
   CitizenPortalWeb_EnvironmentCode: PD
-  CitizenPortalWeb_Urls: http://citizenportal.dudesolutions.com
   CitizenPortalWeb_SecretsPath: /etc/secrets
-  PWD: /
-  NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
-  NEW_RELIC_APP_NAME: AE.PD.CitizenPortalWeb
-  Datadog_ClusterName: eks-ue1-prod
-  Datadog_Env: Production
+  CitizenPortalWeb_ServiceName: CitizenPortalWeb
+  CitizenPortalWeb_Urls: http://citizenportal.dudesolutions.com
+  CitizenPortal__Auth0ApiResource: citizenportalapi.production
+  CitizenPortal__Auth0AuthorityUri: https://auth.brightlysoftware.com
+  CitizenPortal__Auth0ClientId: rRz5Qyi1KRusHPaBZufkISi1zB0Jikhn
   CitizenPortal__DataDogApplicationId: 1c0fa240-749b-4f91-b1b1-595b47d479e3
   CitizenPortal__DataDogClientToken: pub9bcc848ad828984b7af24a14602811c9
-  CitizenPortal__DataDogRumSamplingRate: 50
   CitizenPortal__DataDogEnvironmentName: pd
-  CitizenPortal__baseUriSignup : https://auth.dudesolutions.com
-  CitizenPortal__Auth0AuthorityUri : https://auth.brightlysoftware.com 
-  CitizenPortal__Auth0ClientId : rRz5Qyi1KRusHPaBZufkISi1zB0Jikhn
-  CitizenPortal__Auth0ApiResource : citizenportalapi.production
+  CitizenPortal__DataDogRumSamplingRate: 50
+  CitizenPortal__baseUriSignup: https://auth.dudesolutions.com
+  DEBUG: 0
+  Datadog_ClusterName: eks-ue1-prod
+  Datadog_Env: Production
+  HOME: /root
+  HOSTNAME: 6e441fe58c12
+  Logging__ApplicationName: citizenportalweb
+  Logging__EnvironmentName: Production
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__LogLevel: Information
+  NEW_RELIC_APP_NAME: AE.PD.CitizenPortalWeb
+  NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
+  NGINX_VERSION: 1.13.12
+  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  PWD: /
+  SERVICENAME: CITIZENPORTALWEB
+  SHLVL: 1
