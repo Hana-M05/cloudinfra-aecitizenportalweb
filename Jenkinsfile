@@ -22,7 +22,7 @@ def cluster_dtls = [
     training: [ cluster: 'eks-ue1-training', acc_no: '695288531576', region: 'us-east-1', sns: 'jenkinsnotify-ue1-prod-primary'],
 ]
 def getEnvList() {
-    if("${JENKINS_URL}".contains("lzprod")){
+    if("${env.JENKINS_URL}".contains("lzprod")){
         return ["staging","prod","demo","training"]
     }
     else {
