@@ -13,6 +13,11 @@ config:
   CitizenPortal__Auth0ClientId : 8b9LIwBrahG8JxqRV3oJO9rs4MuZzU7q
   CitizenPortal__Auth0ApiResource : citizenportalapi.integration2
   CitizenPortalWeb_SecretsPath: /etc/secrets
+  Logging__ApplicationName: citizenportalweb
+  Logging__EnvironmentName: Integration2
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__LogLevel: Information
+  ASPNETCORE_ENVIRONMENT: Integration2
   PWD: /
   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
   NEW_RELIC_APP_NAME: AE.I2.CitizenPortalWeb
