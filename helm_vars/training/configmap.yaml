@@ -19,6 +19,11 @@ config:
   CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
   CitizenPortal__Auth0ClientId : b0HApRGXZmCxFqBQ9245z3fUg4zPRevb
   CitizenPortal__Auth0ApiResource : citizenportalapi.training
+  Logging__ApplicationName: citizenportalweb
+  Logging__EnvironmentName: Training
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__LogLevel: Information
+  ASPNETCORE_ENVIRONMENT: Training
 replicaCount: 1
 autoscaling:
   enabled: true

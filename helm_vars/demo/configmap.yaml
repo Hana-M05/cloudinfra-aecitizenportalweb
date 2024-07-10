@@ -23,3 +23,8 @@ config:
   CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
   CitizenPortal__Auth0ClientId : YxDaxu2UqEcPIHgYLco5SS0cucCOcWKm
   CitizenPortal__Auth0ApiResource : citizenportalapi.demo
+  Logging__ApplicationName: citizenportalweb
+  Logging__EnvironmentName: Demo
+  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+  Logging__LogLevel: Information
+  ASPNETCORE_ENVIRONMENT: Demo
