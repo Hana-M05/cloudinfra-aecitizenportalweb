@@ -28,9 +28,9 @@ config:
   Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
   Logging__LogLevel: Information
   ASPNETCORE_ENVIRONMENT: Master
-replicaCount: 1
+replicaCount: 2
 autoscaling:
   enabled: true
-  minReplicas: 1
+  minReplicas: 2
   maxReplicas: 2
   targetCPUUtilizationPercentage: 85
