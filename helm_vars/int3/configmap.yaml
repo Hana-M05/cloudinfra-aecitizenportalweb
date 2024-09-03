@@ -1,26 +1,27 @@
-config:
-  SERVICENAME: CITIZENPORTALWEB
-  DEBUG: 0
-  SHLVL: 1
-  HOME: /root
-  CitizenPortalWeb_ServiceName: CitizenPortalWeb
-  NGINX_VERSION: 1.13.12
-  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-  CitizenPortalWeb_EnvironmentCode: I3
-  CitizenPortalWeb_Urls: http://citizenportal-integration3.dudesoln.com
-  CitizenPortal__baseUriSignup : https://auth-integration3.dudesoln.com
-  CitizenPortal__Auth0AuthorityUri : https://sandbox.auth.brightlysoftware.com
-  CitizenPortal__Auth0ClientId : iiSxcHZHvn4312TeHStc48QyJGdicPVe
-  CitizenPortal__Auth0ApiResource : citizenportalapi.integration3
-  CitizenPortalWeb_SecretsPath: /etc/secrets
-  PWD: /
-  NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
-  NEW_RELIC_APP_NAME: AE.I3.CitizenPortalWeb
-  Datadog_ClusterName: eks-ue1-dev
-  Datadog_Env: Int3
-replicaCount: 1
-autoscaling:
-  enabled: true
-  minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 85
+brightly-helm-chart:
+ config:
+   SERVICENAME: CITIZENPORTALWEB
+   DEBUG: 0
+   SHLVL: 1
+   HOME: /root
+   CitizenPortalWeb_ServiceName: CitizenPortalWeb
+   NGINX_VERSION: 1.13.12
+   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+   CitizenPortalWeb_EnvironmentCode: I3
+   CitizenPortalWeb_Urls: http://citizenportal-integration3.dudesoln.com
+   CitizenPortal__baseUriSignup : https://auth-integration3.dudesoln.com
+   CitizenPortal__Auth0AuthorityUri : https://sandbox.auth.brightlysoftware.com
+   CitizenPortal__Auth0ClientId : iiSxcHZHvn4312TeHStc48QyJGdicPVe
+   CitizenPortal__Auth0ApiResource : citizenportalapi.integration3
+   CitizenPortalWeb_SecretsPath: /etc/secrets
+   PWD: /
+   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
+   NEW_RELIC_APP_NAME: AE.I3.CitizenPortalWeb
+   Datadog_ClusterName: eks-ue1-dev
+   Datadog_Env: Int3
+ replicaCount: 1
+ autoscaling:
+   enabled: true
+   minReplicas: 1
+   maxReplicas: 2
+   targetCPUUtilizationPercentage: 85

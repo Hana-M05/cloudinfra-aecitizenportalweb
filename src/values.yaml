@@ -1,75 +1,77 @@
-# Default values for ae-citizenportalweb.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-replicaCount: 2
-
-image:
-  application:
-    repository: 704173473619.dkr.ecr.us-east-1.amazonaws.com/ae-citizenportalweb
-    #repository: nginx
-    pullPolicy: IfNotPresent
-    # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.2.295"
-    #tag: latest
-    imagePullSecrets: []
-
-application:
-  resources:  
-    limits:
-      cpu: 1
-      memory: 2Gi
-    requests:
-      cpu: 250m
-      memory: 512Mi
-  volume_secret:
-    present: true
-    name: ae-citizenportalweb-secrets
-    mountPath: /etc/secrets
-
-configmap:
-  enabled: true
-  name: ""
-
-secretdtls:
-  enabled: true
-  name: ""
-
-nameOverride: ""
-fullnameOverride: ""
-
-namespace: 
-
-serviceAccount:
-  create: true
-  annotations: {}
-  name: ae-citizenportalweb
-
-ingress:
-  enabled: false
-
-podAnnotations: {}
-
-podSecurityContext: {}
-
-securityContext: {}
-
-service:
-  type: NodePort
-  port: 80
-  tls: []
-
-autoscaling:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 4
-  targetCPUUtilizationPercentage: 85
-
-targetGroupBinding:
-    create: true
-    arn:
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
+brightly-helm-chart:
+ # Default values for ae-citizenportalweb.
+ # This is a YAML-formatted file.
+ # Declare variables to be passed into your templates.
+ 
+ replicaCount: 2
+ product: ae
+ 
+ image:
+   application:
+     repository: 704173473619.dkr.ecr.us-east-1.amazonaws.com/ae-citizenportalweb
+     #repository: nginx
+     pullPolicy: IfNotPresent
+     # Overrides the image tag whose default is the chart appVersion.
+     tag: "1.2.295"
+     #tag: latest
+     imagePullSecrets: []
+ 
+ application:
+   resources:  
+     limits:
+       cpu: 1
+       memory: 2Gi
+     requests:
+       cpu: 250m
+       memory: 512Mi
+   volume_secret:
+     present: true
+     name: ae-citizenportalweb-secrets
+     mountPath: /etc/secrets
+ 
+ configmap:
+   enabled: true
+   name: ""
+ 
+ secretdtls:
+   enabled: true
+   name: ""
+ 
+ nameOverride: ""
+ fullnameOverride: ""
+ 
+ namespace: 
+ 
+ serviceAccount:
+   create: true
+   annotations: {}
+   name: ae-citizenportalweb
+ 
+ ingress:
+   enabled: false
+ 
+ podAnnotations: {}
+ 
+ podSecurityContext: {}
+ 
+ securityContext: {}
+ 
+ service:
+   type: NodePort
+   port: 80
+   tls: []
+ 
+ autoscaling:
+   enabled: true
+   minReplicas: 2
+   maxReplicas: 4
+   targetCPUUtilizationPercentage: 85
+ 
+ targetGroupBinding:
+     create: true
+     arn:
+ nodeSelector: {}
+ 
+ tolerations: []
+ 
+ affinity: {}

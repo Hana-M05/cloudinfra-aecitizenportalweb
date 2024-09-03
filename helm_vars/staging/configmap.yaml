@@ -1,32 +1,33 @@
-config:
-  SERVICENAME: CITIZENPORTALWEB
-  DEBUG: 0
-  HOSTNAME: 61074fa2d5ad
-  SHLVL: 1
-  HOME: /root
-  CitizenPortalWeb_ServiceName: CitizenPortalWeb
-  NGINX_VERSION: 1.13.12
-  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-  CitizenPortalWeb_EnvironmentCode: ST
-  CitizenPortalWeb_Urls: http://citizenportal.dudesoln.net
-  CitizenPortalWeb_SecretsPath: /etc/secrets
-  PWD: /
-  NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
-  NEW_RELIC_APP_NAME: AE.ST.CitizenPortalWeb
-  Datadog_ClusterName: eks-ue1-staging
-  Datadog_Env:  Staging
-  CitizenPortal__baseUriSignup : https://auth.dudesoln.net
-  CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com
-  CitizenPortal__Auth0ClientId : nzKQ3F7NGsiqqZODLxY49k7PyTLw6WsJ
-  CitizenPortal__Auth0ApiResource : citizenportalapi.staging
-  Logging__ApplicationName: citizenportalweb
-  Logging__EnvironmentName: Staging
-  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
-  Logging__LogLevel: Information
-  ASPNETCORE_ENVIRONMENT: Staging
-replicaCount: 1
-autoscaling:
-  enabled: true
-  minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 85
+brightly-helm-chart:
+ config:
+   SERVICENAME: CITIZENPORTALWEB
+   DEBUG: 0
+   HOSTNAME: 61074fa2d5ad
+   SHLVL: 1
+   HOME: /root
+   CitizenPortalWeb_ServiceName: CitizenPortalWeb
+   NGINX_VERSION: 1.13.12
+   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+   CitizenPortalWeb_EnvironmentCode: ST
+   CitizenPortalWeb_Urls: http://citizenportal.dudesoln.net
+   CitizenPortalWeb_SecretsPath: /etc/secrets
+   PWD: /
+   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
+   NEW_RELIC_APP_NAME: AE.ST.CitizenPortalWeb
+   Datadog_ClusterName: eks-ue1-staging
+   Datadog_Env:  Staging
+   CitizenPortal__baseUriSignup : https://auth.dudesoln.net
+   CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com
+   CitizenPortal__Auth0ClientId : nzKQ3F7NGsiqqZODLxY49k7PyTLw6WsJ
+   CitizenPortal__Auth0ApiResource : citizenportalapi.staging
+   Logging__ApplicationName: citizenportalweb
+   Logging__EnvironmentName: Staging
+   Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+   Logging__LogLevel: Information
+   ASPNETCORE_ENVIRONMENT: Staging
+ replicaCount: 1
+ autoscaling:
+   enabled: true
+   minReplicas: 1
+   maxReplicas: 2
+   targetCPUUtilizationPercentage: 85

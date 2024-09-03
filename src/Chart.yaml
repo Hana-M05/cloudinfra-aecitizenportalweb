@@ -4,3 +4,7 @@ description: A Helm chart for creating ae-citizenportalweb API
 type: application
 version: 0.1.1
 appVersion: "1.2.295"
+dependencies:
+  - name: brightly-helm-chart
+    version: "*"
+    repository: oci://704173473619.dkr.ecr.us-east-1.amazonaws.com
