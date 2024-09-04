@@ -1,32 +1,33 @@
-config:
-  SERVICENAME: CITIZENPORTALWEB
-  DEBUG: 0
-  HOSTNAME: 403ec84d4412
-  SHLVL: 1
-  HOME: /root
-  CitizenPortalWeb_ServiceName: CitizenPortalWeb
-  NGINX_VERSION: 1.13.12
-  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-  CitizenPortalWeb_EnvironmentCode: TR
-  CitizenPortalWeb_Urls: http://citizenportal-training.dudesolutions.com
-  CitizenPortalWeb_SecretsPath: /etc/secrets
-  PWD: /
-  NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
-  NEW_RELIC_APP_NAME: AE.TR.CitizenPortalWeb
-  Datadog_ClusterName: eks-ue1-training
-  Datadog_Env:  Training
-  CitizenPortal__baseUriSignup : https://auth-training.dudesolutions.com
-  CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
-  CitizenPortal__Auth0ClientId : b0HApRGXZmCxFqBQ9245z3fUg4zPRevb
-  CitizenPortal__Auth0ApiResource : citizenportalapi.training
-  Logging__ApplicationName: citizenportalweb
-  Logging__EnvironmentName: Training
-  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
-  Logging__LogLevel: Information
-  ASPNETCORE_ENVIRONMENT: Training
-replicaCount: 1
-autoscaling:
-  enabled: true
-  minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 85
+brightly-helm-chart:
+ config:
+   SERVICENAME: CITIZENPORTALWEB
+   DEBUG: 0
+   HOSTNAME: 403ec84d4412
+   SHLVL: 1
+   HOME: /root
+   CitizenPortalWeb_ServiceName: CitizenPortalWeb
+   NGINX_VERSION: 1.13.12
+   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+   CitizenPortalWeb_EnvironmentCode: TR
+   CitizenPortalWeb_Urls: http://citizenportal-training.dudesolutions.com
+   CitizenPortalWeb_SecretsPath: /etc/secrets
+   PWD: /
+   NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
+   NEW_RELIC_APP_NAME: AE.TR.CitizenPortalWeb
+   Datadog_ClusterName: eks-ue1-training
+   Datadog_Env:  Training
+   CitizenPortal__baseUriSignup : https://auth-training.dudesolutions.com
+   CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
+   CitizenPortal__Auth0ClientId : b0HApRGXZmCxFqBQ9245z3fUg4zPRevb
+   CitizenPortal__Auth0ApiResource : citizenportalapi.training
+   Logging__ApplicationName: citizenportalweb
+   Logging__EnvironmentName: Training
+   Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+   Logging__LogLevel: Information
+   ASPNETCORE_ENVIRONMENT: Training
+ replicaCount: 1
+ autoscaling:
+   enabled: true
+   minReplicas: 1
+   maxReplicas: 2
+   targetCPUUtilizationPercentage: 85

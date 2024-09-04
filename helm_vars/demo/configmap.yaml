@@ -1,30 +1,31 @@
-config:
-  SERVICENAME: CITIZENPORTALWEB
-  DEBUG: 0
-  HOSTNAME: c98fd85a159d
-  SHLVL: 1
-  HOME: /root
-  CitizenPortalWeb_ServiceName: CitizenPortalWeb
-  NGINX_VERSION: 1.13.12
-  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-  CitizenPortalWeb_EnvironmentCode: DM
-  CitizenPortalWeb_Urls: http://citizenportal-demo.dudesolutions.com
-  CitizenPortalWeb_SecretsPath: /etc/secrets
-  PWD: /
-  NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
-  NEW_RELIC_APP_NAME: AE.DM.CitizenPortalWeb
-  Datadog_ClusterName: eks-ue1-demo
-  Datadog_Env:  Demo
-  CitizenPortal__DataDogApplicationId: 69efa0e1-0dad-4cce-8f43-e26dd94dd3e8
-  CitizenPortal__DataDogClientToken: pubb49c85882e280038debde38e4c3dab29
-  CitizenPortal__DataDogRumSamplingRate: 50
-  CitizenPortal__DataDogEnvironmentName: dm
-  CitizenPortal__baseUriSignup : https://auth-demo.dudesolutions.com
-  CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
-  CitizenPortal__Auth0ClientId : YxDaxu2UqEcPIHgYLco5SS0cucCOcWKm
-  CitizenPortal__Auth0ApiResource : citizenportalapi.demo
-  Logging__ApplicationName: citizenportalweb
-  Logging__EnvironmentName: Demo
-  Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
-  Logging__LogLevel: Information
-  ASPNETCORE_ENVIRONMENT: Demo
+brightly-helm-chart:
+ config:
+   SERVICENAME: CITIZENPORTALWEB
+   DEBUG: 0
+   HOSTNAME: c98fd85a159d
+   SHLVL: 1
+   HOME: /root
+   CitizenPortalWeb_ServiceName: CitizenPortalWeb
+   NGINX_VERSION: 1.13.12
+   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+   CitizenPortalWeb_EnvironmentCode: DM
+   CitizenPortalWeb_Urls: http://citizenportal-demo.dudesolutions.com
+   CitizenPortalWeb_SecretsPath: /etc/secrets
+   PWD: /
+   NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
+   NEW_RELIC_APP_NAME: AE.DM.CitizenPortalWeb
+   Datadog_ClusterName: eks-ue1-demo
+   Datadog_Env:  Demo
+   CitizenPortal__DataDogApplicationId: 69efa0e1-0dad-4cce-8f43-e26dd94dd3e8
+   CitizenPortal__DataDogClientToken: pubb49c85882e280038debde38e4c3dab29
+   CitizenPortal__DataDogRumSamplingRate: 50
+   CitizenPortal__DataDogEnvironmentName: dm
+   CitizenPortal__baseUriSignup : https://auth-demo.dudesolutions.com
+   CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
+   CitizenPortal__Auth0ClientId : YxDaxu2UqEcPIHgYLco5SS0cucCOcWKm
+   CitizenPortal__Auth0ApiResource : citizenportalapi.demo
+   Logging__ApplicationName: citizenportalweb
+   Logging__EnvironmentName: Demo
+   Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+   Logging__LogLevel: Information
+   ASPNETCORE_ENVIRONMENT: Demo
