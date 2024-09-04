@@ -1,4 +1,4 @@
-@Library('shared-lib') _
+@Library('shared-lib@centralize-helm') _
 
 main_pipeline(
 	Upper_Environemnts: ["staging","prod","demo","training"],
