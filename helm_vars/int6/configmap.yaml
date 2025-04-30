@@ -15,8 +15,8 @@ brightly-helm-chart:
    CitizenPortalWeb_EnvironmentCode: I6
    CitizenPortalWeb_Urls: http://citizenportal-integration6.dudesoln.com
    CitizenPortal__baseUriSignup : https://auth-integration6.dudesoln.com
-   CitizenPortal__Auth0AuthorityUri : https://dev.auth.brightlysoftware.com
-   CitizenPortal__Auth0ClientId : vaeEszNu2G26iuNd3gHLzdXO9J47tArq
+   CitizenPortal__Auth0AuthorityUri : https://dev.id.brightlysoftware.com
+   CitizenPortal__Auth0ClientId : K7kaNakxPx24YWA9WTdv30U3zelXocui
    CitizenPortal__Auth0ApiResource : citizenportalapi.integration6
    CitizenPortalWeb_SecretsPath: /etc/secrets
    PWD: /
