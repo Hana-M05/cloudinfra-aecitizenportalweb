@@ -14,7 +14,7 @@ brightly-helm-chart:
    CitizenPortal__DataDogRumSamplingRate: 50
    CitizenPortal__baseUriSignup: https://auth.brightlysoftware.co.uk
    DEBUG: 0
-   Datadog_ClusterName: eks-ue1-prod
+   Datadog_ClusterName: eks-ew2-prod
    Datadog_Env: Production
    HOME: /root
    HOSTNAME: 6e441fe58c12
