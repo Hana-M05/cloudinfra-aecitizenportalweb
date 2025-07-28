@@ -21,8 +21,8 @@ brightly-helm-chart:
    CitizenPortal__DataDogRumSamplingRate: 50
    CitizenPortal__DataDogEnvironmentName: dm
    CitizenPortal__baseUriSignup : https://auth-demo.dudesolutions.com
-   CitizenPortal__Auth0AuthorityUri : https://staging.auth.brightlysoftware.com 
-   CitizenPortal__Auth0ClientId : YxDaxu2UqEcPIHgYLco5SS0cucCOcWKm
+   CitizenPortal__Auth0AuthorityUri : https://id.brightlysoftware.com 
+   CitizenPortal__Auth0ClientId : KQKK4XvPUJl5eQfGJdJvXXorM9FQeNoJ
    CitizenPortal__Auth0ApiResource : citizenportalapi.demo
    Logging__ApplicationName: citizenportalweb
    Logging__EnvironmentName: Demo
