@@ -9,10 +9,10 @@ brightly-helm-chart:
    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
    CitizenPortalWeb_EnvironmentCode: I4
    CitizenPortalWeb_Urls: http://citizenportal-integration4.dudesoln.com
-   CitizenPortal__baseUriSignup : https://auth-integration4.dudesoln.com
-   CitizenPortal__Auth0AuthorityUri : https://dev.id.brightlysoftware.com
-   CitizenPortal__Auth0ClientId : o7w8hNnGao5UlJAgBwhBfvwfVLHW2VPr
-   CitizenPortal__Auth0ApiResource : citizenportalapi.integration4
+   CitizenPortal__baseUriSignup: https://auth-integration4.dudesoln.com
+   CitizenPortal__Auth0AuthorityUri: https://dev.id.brightlysoftware.com
+   CitizenPortal__Auth0ClientId: o7w8hNnGao5UlJAgBwhBfvwfVLHW2VPr
+   CitizenPortal__Auth0ApiResource: citizenportalapi.integration4
    CitizenPortalWeb_SecretsPath: /etc/secrets
    PWD: /
    NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
