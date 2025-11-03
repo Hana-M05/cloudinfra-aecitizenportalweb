@@ -1,20 +1,37 @@
 brightly-helm-chart:
- config:
-   SERVICENAME: CITIZENPORTALWEB
-   DEBUG: 0
-   HOSTNAME: 0b7d7b7144b9
-   SHLVL: 1
-   HOME: /root
-   CitizenPortalWeb_ServiceName: CitizenPortalWeb
-   NGINX_VERSION: 1.13.12
-   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-   CitizenPortalWeb_EnvironmentCode: PF
-   CitizenPortalWeb_Urls: http://citizenportal-performance.dudesoln.com
-   CitizenPortal__Auth0AuthorityUri : https://dev.id.brightlysoftware.com
-   CitizenPortal__Auth0ClientId : eGP4ERFlnxdJFmHvXy0yCXOqGJtHc910
-   CitizenPortalWeb_SecretsPath: /etc/secrets
-   PWD: /
-   NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
-   NEW_RELIC_APP_NAME: AE.PF.CitizenPortalWeb
-   Datadog_ClusterName: eks-ue1-dev
-   Datadog_Env:  Perf
+  config:
+    SERVICENAME: CITIZENPORTALWEB
+    DEBUG: 0
+    HOSTNAME: 0b7d7b7144b9
+    SHLVL: 1
+    HOME: /root
+    CitizenPortalWeb_ServiceName: CitizenPortalWeb
+    NGINX_VERSION: 1.13.12
+    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    CitizenPortalWeb_EnvironmentCode: PF
+    CitizenPortalWeb_Urls: http://citizenportal-performance.dudesoln.com
+    CitizenPortal__Auth0AuthorityUri: https://dev.id.brightlysoftware.com
+    CitizenPortal__Auth0ClientId: eGP4ERFlnxdJFmHvXy0yCXOqGJtHc910
+    CitizenPortalWeb_SecretsPath: /etc/secrets
+    PWD: /
+    NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
+    NEW_RELIC_APP_NAME: AE.PF.CitizenPortalWeb
+    Datadog_ClusterName: eks-ue1-dev
+    Datadog_Env: Perf
+    CitizenPortal__baseUriSignup: https://auth-performance.dudesoln.com
+    CitizenPortal__Auth0ApiResource: citizenportalapi.performance
+    CitizenPortal__DataDogApplicationId: f09867f3-72dc-408d-9421-87d2080da296
+    CitizenPortal__DataDogClientToken: pubd10986925fa5c6b6e0e02c18b3d2c04b
+    CitizenPortal__DataDogRumSamplingRate: 50
+    CitizenPortal__DataDogEnvironmentName: pf
+    Logging__ApplicationName: citizenportalweb
+    Logging__EnvironmentName: Performance
+    Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+    Logging__LogLevel: Information
+    ASPNETCORE_ENVIRONMENT: Performance
+  replicaCount: 1
+  autoscaling:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 2
+    targetCPUUtilizationPercentage: 85
