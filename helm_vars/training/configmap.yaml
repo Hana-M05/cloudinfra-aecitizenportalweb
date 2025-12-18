@@ -17,8 +17,8 @@ brightly-helm-chart:
    Datadog_ClusterName: eks-ue1-training
    Datadog_Env:  Training
    CitizenPortal__baseUriSignup : https://auth-training.dudesolutions.com
-   CitizenPortal__Auth0AuthorityUri : https://auth.brightlysoftware.com 
-   CitizenPortal__Auth0ClientId : ABepGN7zzyV2pQwrKkmo5tlSIrTB1Hna
+   CitizenPortal__Auth0AuthorityUri : https://id.brightlysoftware.com 
+   CitizenPortal__Auth0ClientId : YOeDWhgLMR9Xmxkn2NojLAmpkhiY1AQR 
    CitizenPortal__Auth0ApiResource : citizenportalapi.training
    Logging__ApplicationName: citizenportalweb
    Logging__EnvironmentName: Training
