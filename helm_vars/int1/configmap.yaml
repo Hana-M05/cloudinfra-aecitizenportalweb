@@ -19,6 +19,10 @@ brightly-helm-chart:
    NEW_RELIC_APP_NAME: AE.I1.CitizenPortalWeb
    Datadog_ClusterName: eks-ue1-dev
    Datadog_Env: Int1
+   Logging__ApplicationName: citizenportalweb
+   Logging__EnvironmentName: Integration1
+   Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
+   Logging__LogLevel: Information
  replicaCount: 1
  autoscaling:
    enabled: true
