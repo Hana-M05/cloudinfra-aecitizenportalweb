@@ -9,7 +9,7 @@ brightly-helm-chart:
    NGINX_VERSION: 1.13.12
    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
    CitizenPortalWeb_EnvironmentCode: AP
-   CitizenPortalWeb_Urls: http://citizenportal-apple.dudesoln.com
+   CitizenPortalWeb_Urls: https://apple.us.citizenportal.ae.alm.siemens-alm.io
    CitizenPortal__baseUriSignup : https://auth-apple.dudesoln.com
    CitizenPortal__Auth0AuthorityUri : https://dev.auth.brightlysoftware.com
    CitizenPortal__Auth0ClientId : bqVAKMkIoswyNwK8y8E2P5tjTnMv9FED
