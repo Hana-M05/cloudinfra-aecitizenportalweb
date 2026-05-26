@@ -1,0 +1,75 @@
+brightly-helm-chart:
+ # Default values for ae-citizenportalweb.
+ # This is a YAML-formatted file.
+ # Declare variables to be passed into your templates.
+
+ replicaCount: 2
+ product: ae
+
+ image:
+   application:
+     repository: 590109869247.dkr.ecr.us-gov-east-1.amazonaws.com/ae-citizenportalweb
+     pullPolicy: IfNotPresent
+     # Overrides the image tag whose default is the chart appVersion.
+     tag: "1.2.295"
+     imagePullSecrets: []
+
+ application:
+   resources:
+     limits:
+       cpu: 1
+       memory: 2Gi
+     requests:
+       cpu: 250m
+       memory: 512Mi
+   volume_secret:
+     present: true
+     name: ae-citizenportalweb-secrets
+     mountPath: /etc/secrets
+
+ configmap:
+   enabled: true
+   name: ""
+
+ secretdtls:
+   enabled: true
+   name: ""
+
+ nameOverride: ""
+ fullnameOverride: ""
+
+ namespace:
+
+ serviceAccount:
+   create: true
+   annotations: {}
+   name: ae-citizenportalweb
+
+ ingress:
+   enabled: false
+
+ podAnnotations: {}
+
+ podSecurityContext: {}
+
+ securityContext: {}
+
+ service:
+   type: ClusterIP
+   port: 80
+   tls: []
+
+ autoscaling:
+   enabled: true
+   minReplicas: 2
+   maxReplicas: 4
+   targetCPUUtilizationPercentage: 85
+
+ targetGroupBinding:
+     create: false
+     arn:
+ nodeSelector: {}
+
+ tolerations: []
+
+ affinity: {}

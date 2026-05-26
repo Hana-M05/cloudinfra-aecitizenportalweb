@@ -1,0 +1,10 @@
+apiVersion: v2
+name: ae-citizenportalweb
+description: A Helm chart for creating ae-citizenportalweb API
+type: application
+version: 0.1.1
+appVersion: "1.2.295"
+dependencies:
+  - name: brightly-helm-chart
+    version: "0.1.15"
+    repository: oci://590109869247.dkr.ecr.us-gov-east-1.amazonaws.com
