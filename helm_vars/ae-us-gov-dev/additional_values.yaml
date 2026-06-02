@@ -4,3 +4,5 @@ brightly-helm-chart:
       repository: 590109869247.dkr.ecr.us-gov-east-1.amazonaws.com/ae-citizenportalweb
   targetGroupBinding:
     create: false
+  clusterRoleBinding:
+    create: false

@@ -6,5 +6,5 @@ version: 0.1.1
 appVersion: "1.2.295"
 dependencies:
   - name: brightly-helm-chart
-    version: "0.1.15"
+    version: "0.1.17"
     repository: oci://590109869247.dkr.ecr.us-gov-east-1.amazonaws.com
