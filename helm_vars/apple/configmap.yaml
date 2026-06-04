@@ -11,8 +11,8 @@ brightly-helm-chart:
    CitizenPortalWeb_EnvironmentCode: AP
    CitizenPortalWeb_Urls: https://apple.us.citizenportal.internal.ae.alm.siemens-alm.io
    CitizenPortal__baseUriSignup : https://auth-apple.dudesoln.com
-   CitizenPortal__Auth0AuthorityUri : https://dev.auth.brightlysoftware.com
-   CitizenPortal__Auth0ClientId : bqVAKMkIoswyNwK8y8E2P5tjTnMv9FED
+   CitizenPortal__Auth0AuthorityUri : https://dev.id.brightlysoftware.com
+   CitizenPortal__Auth0ClientId : Xy4ClWDct5AX1ipJvXETBsAwLjQP7hKs
    CitizenPortal__Auth0ApiResource : citizenportalapi.apple
    CitizenPortalWeb_SecretsPath: /etc/secrets
    PWD: /
