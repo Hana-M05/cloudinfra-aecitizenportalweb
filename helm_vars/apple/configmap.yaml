@@ -15,6 +15,7 @@ brightly-helm-chart:
    CitizenPortal__Auth0ClientId : Xy4ClWDct5AX1ipJvXETBsAwLjQP7hKs
    CitizenPortal__Auth0ApiResource : citizenportalapi.apple
    CitizenPortalWeb_SecretsPath: /etc/secrets
+   CitizenPortal__LightyearBranding: true
    PWD: /
    NEW_RELIC_LICENSE_KEY: 50e5fa062e240bd749587200fca625c8eb1e5265
    NEW_RELIC_APP_NAME: AE.AP.CitizenPortalWeb
