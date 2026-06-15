@@ -14,6 +14,7 @@ brightly-helm-chart:
    CitizenPortal__Auth0ClientId : MwPbS6ZGWjIaP5IdKQ6JLfDpD7dbQ8JO
    CitizenPortal__Auth0ApiResource : citizenportalapi.integration2
    CitizenPortalWeb_SecretsPath: /etc/secrets
+   CitizenPortal__LightyearBranding: false
    Logging__ApplicationName: citizenportalweb
    Logging__EnvironmentName: Integration2
    Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
