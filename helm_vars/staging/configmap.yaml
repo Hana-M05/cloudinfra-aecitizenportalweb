@@ -20,7 +20,7 @@ brightly-helm-chart:
    CitizenPortal__Auth0AuthorityUri : https://staging.id.brightlysoftware.com
    CitizenPortal__Auth0ClientId : fKe1efWrMOITOsH1kZjT0YM2YAQPw0VS
    CitizenPortal__Auth0ApiResource : citizenportalapi.staging
-   CitizenPortal__LightyearBranding: false
+   CitizenPortal__LightyearBranding: true
    Logging__ApplicationName: citizenportalweb
    Logging__EnvironmentName: Staging
    Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
