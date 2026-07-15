@@ -20,7 +20,7 @@ brightly-helm-chart:
    CitizenPortal__Auth0AuthorityUri : https://id.brightlysoftware.com 
    CitizenPortal__Auth0ClientId : YOeDWhgLMR9Xmxkn2NojLAmpkhiY1AQR 
    CitizenPortal__Auth0ApiResource : citizenportalapi.training
-   CitizenPortal__LightyearBranding: false
+   CitizenPortal__LightyearBranding: true
    Logging__ApplicationName: citizenportalweb
    Logging__EnvironmentName: Training
    Logging__HttpLoggingEndpoint: http://logstash.dudesoln.com:5599
