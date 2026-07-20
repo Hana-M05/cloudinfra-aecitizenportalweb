@@ -13,6 +13,7 @@ brightly-helm-chart:
    CitizenPortal__DataDogEnvironmentName: pd
    CitizenPortal__DataDogRumSamplingRate: 50
    CitizenPortal__baseUriSignup: https://auth.dudesolutions.com
+   CitizenPortal__LightyearBranding: true
    DEBUG: 0
    Datadog_ClusterName: eks-ue1-prod
    Datadog_Env: Production
