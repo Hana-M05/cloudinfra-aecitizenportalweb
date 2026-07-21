@@ -19,8 +19,8 @@ brightly-helm-chart:
   application:
     resources:
       limits:
-        cpu: 500m
+        cpu: 50m
         memory: 1Gi
       requests:
-        cpu: 250m
-        memory: 300Mi
+        cpu: 50m
+        memory: 250Mi
