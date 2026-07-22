@@ -7,7 +7,7 @@ brightly-helm-chart:
 
   vpa:
     enabled: true
-    updateMode: "Off"
+    updateMode: "Auto"
     controlledResources:
       - memory
     controlledValues: RequestsOnly
