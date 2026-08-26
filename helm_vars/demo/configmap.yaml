@@ -9,7 +9,7 @@ brightly-helm-chart:
    NGINX_VERSION: 1.13.12
    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
    CitizenPortalWeb_EnvironmentCode: DM
-   CitizenPortalWeb_Urls: http://citizenportal-demo.dudesolutions.com
+   CitizenPortalWeb_Urls: http://demo.us.citizenportal.ae.alm.siemens.com
    CitizenPortalWeb_SecretsPath: /etc/secrets
    PWD: /
    NEW_RELIC_LICENSE_KEY: 5d971123746d366ef72cf10c4e6a0d83709ccd1c
@@ -20,8 +20,8 @@ brightly-helm-chart:
    CitizenPortal__DataDogClientToken: pubb49c85882e280038debde38e4c3dab29
    CitizenPortal__DataDogRumSamplingRate: 50
    CitizenPortal__DataDogEnvironmentName: dm
-   CitizenPortal__baseUriSignup : https://auth-demo.dudesolutions.com
-   CitizenPortal__Auth0AuthorityUri : https://id.brightlysoftware.com 
+   CitizenPortal__baseUriSignup : https://demo.us.auth.ae.alm.siemens.com
+   CitizenPortal__Auth0AuthorityUri : https://id.us.alm.siemens.com
    CitizenPortal__Auth0ClientId : KQKK4XvPUJl5eQfGJdJvXXorM9FQeNoJ
    CitizenPortal__Auth0ApiResource : citizenportalapi.demo
    CitizenPortal__LightyearBranding: true
