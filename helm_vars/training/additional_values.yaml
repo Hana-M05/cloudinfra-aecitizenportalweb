@@ -1,0 +1,28 @@
+brightly-helm-chart:
+  replicaCount: 2
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 4
+    targetCPUUtilizationPercentage: 85
+
+  vpa:
+    enabled: true
+    updateMode: "Off"
+    controlledResources:
+      - memory
+    controlledValues: RequestsOnly
+    minAllowed:
+      cpu: 50m
+      memory: 256Mi
+    maxAllowed:
+      memory: 4Gi
+
+  application:
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 50m
+        memory: 256Mi
