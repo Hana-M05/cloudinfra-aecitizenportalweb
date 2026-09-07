@@ -4,15 +4,15 @@ brightly-helm-chart:
    CitizenPortalWeb_EnvironmentCode: PD
    CitizenPortalWeb_SecretsPath: /etc/secrets
    CitizenPortalWeb_ServiceName: CitizenPortalWeb
-   CitizenPortalWeb_Urls: http://citizenportal.dudesolutions.com
+   CitizenPortalWeb_Urls: http://us.citizenportal.ae.alm.siemens.com
    CitizenPortal__Auth0ApiResource: citizenportalapi.production
-   CitizenPortal__Auth0AuthorityUri: https://id.brightlysoftware.com
+   CitizenPortal__Auth0AuthorityUri: https://id.us.alm.siemens.com
    CitizenPortal__Auth0ClientId: ErTuE1dIzyJhmrv4wHukmWuR9xqPCmAD
    CitizenPortal__DataDogApplicationId: 1c0fa240-749b-4f91-b1b1-595b47d479e3
    CitizenPortal__DataDogClientToken: pub9bcc848ad828984b7af24a14602811c9
    CitizenPortal__DataDogEnvironmentName: pd
    CitizenPortal__DataDogRumSamplingRate: 50
-   CitizenPortal__baseUriSignup: https://auth.dudesolutions.com
+   CitizenPortal__baseUriSignup: https://us.auth.ae.alm.siemens.com
    CitizenPortal__LightyearBranding: true
    DEBUG: 0
    Datadog_ClusterName: eks-ue1-prod
