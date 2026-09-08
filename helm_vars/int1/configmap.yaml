@@ -8,9 +8,9 @@ brightly-helm-chart:
    NGINX_VERSION: 1.13.12
    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
    CitizenPortalWeb_EnvironmentCode: I1
-   CitizenPortalWeb_Urls: http://citizenportal-integration1.dudesoln.com
-   CitizenPortal__Auth0AuthorityUri : https://dev.id.brightlysoftware.com
-   CitizenPortal__baseUriSignup : https://auth-integration1.dudesoln.com
+   CitizenPortalWeb_Urls: http://integration1.us.citizenportal.internal.ae.alm.siemens-alm.io
+   CitizenPortal__Auth0AuthorityUri : https://id.dev.us.alm.siemens-alm.io
+   CitizenPortal__baseUriSignup : https://integration1.us.auth.internal.ae.alm.siemens-alm.io
    CitizenPortal__Auth0ClientId : qRfTKnLPEHMJFugJyPFGNrASIlYdQ2Md 
    CitizenPortal__Auth0ApiResource : citizenportalapi.integration1
    CitizenPortalWeb_SecretsPath: /etc/secrets
